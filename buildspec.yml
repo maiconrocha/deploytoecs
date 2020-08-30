@@ -7,6 +7,10 @@ artifacts:
   files:
     - imageDetail.json
   secondary-artifacts:
+    BuildArtifact:
+      files:
+        - '**/*'
+      name: BuildArt-$COMMIT_HASH
     TaskAppDefinitions:
       files:
         - taskdef.json
