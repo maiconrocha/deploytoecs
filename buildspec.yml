@@ -1,0 +1,8 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - pip install awscli --upgrade # Required for all aws operations
+  build:
+    commands:
+      - echo Running UnitTests
