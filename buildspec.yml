@@ -2,7 +2,17 @@ version: 0.2
 phases:
   build:
     commands:
-      - printf '{"ImageURI":"937448338924.dkr.ecr.ap-southeast-2.amazonaws.com/alpine:latest"}' > imageDetail.json
+      - printf '{"ImageURI":"937448338924.dkr.ecr.ap-southeast-2.amazonaws.com/httpd:latest"}' > imageDetail_1.json
 artifacts:
   files:
-    - imageDetail.json
+    - '**/*'
+  secondary-artifacts:
+    TaskAppDefinitions:
+      files:
+        - taskdef.json
+        - appspec.yml
+      name: TaskAppDefinitions
+    ImageDetail_NGINX:
+      files:
+        - imageDetail_1.json
+      name: ImageDetail_NGINX
