@@ -14,7 +14,7 @@ artifacts:
     TaskAppDefinitions:
       files:
         - taskdef.json
-        - appspec.yml
+        - appspec.yaml
       name: TaskAppDefinitions
     ImageDetail_NGINX:
       files:
