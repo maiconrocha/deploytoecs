@@ -2,21 +2,13 @@ version: 0.2
 phases:
   build:
     commands:
-      - printf '{"ImageURI":"937448338924.dkr.ecr.ap-southeast-2.amazonaws.com/httpd:latest"}' > imageDetail_1.json
+      - printf '{"ImageURI":"937448338924.dkr.ecr.ap-southeast-2.amazonaws.com/httpd:latest"}' > imageDetail.json
 artifacts:
   files:
-    - '**/*'
+    - imageDetail.json
   secondary-artifacts:
-    BuildArtifact:
-      files:
-        - '**/*'
-      name: BuildArt-$COMMIT_HASH
     TaskAppDefinitions:
       files:
         - taskdef.json
         - appspec.yaml
       name: TaskAppDefinitions
-    ImageDetail_NGINX:
-      files:
-        - imageDetail_1.json
-      name: ImageDetail_NGINX
